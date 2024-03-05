@@ -25,3 +25,5 @@ public
 *.utf8.md
 *.knit.md
 
+# hugo
+.hugo_build.lock
