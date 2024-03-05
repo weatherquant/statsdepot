@@ -3,30 +3,30 @@ authors:
 - admin
 bio: ""
 education: ""
-email: "claus.o.wilke@gmail.com"
+email: "statistix.depot@gmail.com"
 interests: []
-#- Molecular Evolution
-#- Protein Biophysics
+#- Bioinformatics
+#- Statistics
 #- Data Science
-#- Data Visualization
-name: Claus O. Wilke
+#- Bayesian Methods
+name: Jason M. West
 organizations:
-- name: "The University of Texas at Austin"
+- name: "Bureau of Meteorology, Australia"
   url: ""
-role: "Professor of Integrative Biology"
+role: "Chief Statistician"
 social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/clauswilke
+  link: https://twitter.com/statistix_depot
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.com/citations?user=Nc8U6E4AAAAJ
+  link: https://scholar.google.com.au/citations?user=z-7zgUQAAAAJ&hl=en
 - icon: github
   icon_pack: fab
-  link: https://github.com/clauswilke
+  link: https://github.com/weatherquant
 superuser: true
 user_groups:
 - Researchers
@@ -34,8 +34,8 @@ user_groups:
 ---
 
 
-Claus Wilke is the Jane and Roland Blumberg Centennial Professor in Molecular Evolution at The University of Texas at Austin. He holds a PhD in Theoretical Physics from the University of Bochum in Germany, and he received postdoctoral training in biological physics in the lab of Chris Adami at Caltech. Claus Wilke has published extensively in the areas of computational biology, molecular evolution, protein biochemistry, and virology. He has also authored several popular R packages used for data visualization, such as cowplot, ggridges, and ggtext, and he is a regular contributor to the package ggplot2. In 2019, Wilke published the book Fundamentals of Data Visualization, which provides a concise introduction to effectively visualizing many different types of data sets.
+Dr. Jason West has over 25 years of academic research and industry experience. He holds a PhD in Mathematics along with degrees in Science, Biostatistics, and Engineering. He has published 2 books and over 50 journal articles on the use of quantitative techniques for solving complex problems. Dr. West is currently the Chief Statistician with the Australian Bureau of Meteorology. He has held senior executive roles with BHP, Commonwealth Bank, Standard Chartered Bank, and KPMG, and Professorial positions with The University of Queensland, the University of New England, and Bond University. Dr. West is based in Brisbane, Australia.
 
-Opinions expressed on this site are personal and are not meant to represent the official position of The University of Texas at Austin.
+Opinions expressed on this site are personal and are not meant to represent the official position of the Bureau of Meteorology.
 
 High-resolution head shots: [Image 1](authors/admin/shot1.jpg), [Image 2](authors/admin/shot2.jpg)
