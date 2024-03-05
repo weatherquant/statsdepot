@@ -12,7 +12,7 @@ interests: []
 name: Jason M. West
 organizations:
 - name: "Bureau of Meteorology, Australia"
-  url: ""
+  url: "http://www.bom.gov.au/"
 role: "Chief Statistician"
 social:
 - icon: envelope
