@@ -3,8 +3,9 @@ title: "Writing a blogdown post for the ages"
 subtitle: How to write a blogdown post that will still render in a hundred years from
   now.
 date: "2024-03-04"
-summary: How to write a blogdown post that will still render in a hundred years from
-  now.
+output:
+  html_document:
+    df_print: paged
 authors: admin
 slug: "a-blogdown-post-for-the-ages"
 categories: Blogging
@@ -14,6 +15,8 @@ tags:
 - Blogging
 - Markdown
 - R Markdown
+summary: How to write a blogdown post that will still render in a hundred years from
+  now.
 ---
 
 ```{r echo = FALSE}
@@ -53,44 +56,44 @@ library(colorspace)
 library(sf) 
 library(ggtext)
 
-# attach data set, requires practicalgg package
-# remotes::install_github("wilkelab/practicalgg")
-data(texas_income, package = "practicalgg")
-
-ggplot(texas_income, aes(fill = estimate)) + 
-  geom_sf(color = "white") +
-  coord_sf(xlim = c(538250, 2125629), crs = 3083) +
-  scale_fill_continuous_sequential(
-    palette = "Blues", rev = TRUE,
-    na.value = "grey60",
-    name = "annual median income (USD)",
-    limits = c(18000, 90000),
-    breaks = 20000*c(1:4),
-    labels = c("$20,000", "$40,000", "$60,000", "$80,000"),
-    guide = guide_colorbar(
-      direction = "horizontal",
-      label.position = "bottom",
-      title.position = "top",
-      barwidth = grid::unit(3.0, "in"),
-      barheight = grid::unit(0.2, "in")
-    )
-  ) +
-  labs(
-    caption = "
-<span style='font-family: \"Font Awesome 5 Brands\"'>&#xf099;</span>
-@clauswilke<br>
-<span style='font-family: \"Font Awesome 5 Free Solid\"'>&#xf781;</span>
-clauswilke.com
-"
-  ) +
-  theme_map(12, font_family = "Myriad Pro") +
-  theme(
-    legend.title.align = 0.5,
-    legend.text.align = 0.5,
-    legend.justification = c(0, 0),
-    legend.position = c(0.02, 0.1),
-    plot.caption = element_markdown()
-  )
+# # attach data set, requires practicalgg package
+# # remotes::install_github("wilkelab/practicalgg")
+# data(texas_income, package = "practicalgg")
+# 
+# ggplot(texas_income, aes(fill = estimate)) + 
+#   geom_sf(color = "white") +
+#   coord_sf(xlim = c(538250, 2125629), crs = 3083) +
+#   scale_fill_continuous_sequential(
+#     palette = "Blues", rev = TRUE,
+#     na.value = "grey60",
+#     name = "annual median income (USD)",
+#     limits = c(18000, 90000),
+#     breaks = 20000*c(1:4),
+#     labels = c("$20,000", "$40,000", "$60,000", "$80,000"),
+#     guide = guide_colorbar(
+#       direction = "horizontal",
+#       label.position = "bottom",
+#       title.position = "top",
+#       barwidth = grid::unit(3.0, "in"),
+#       barheight = grid::unit(0.2, "in")
+#     )
+#   ) +
+#   labs(
+#     caption = "
+# <span style='font-family: \"Font Awesome 5 Brands\"'>&#xf099;</span>
+# @clauswilke<br>
+# <span style='font-family: \"Font Awesome 5 Free Solid\"'>&#xf781;</span>
+# clauswilke.com
+# "
+#   ) +
+#   theme_map(12, font_family = "Myriad Pro") +
+#   theme(
+#     legend.title.align = 0.5,
+#     legend.text.align = 0.5,
+#     legend.justification = c(0, 0),
+#     legend.position = c(0.02, 0.1),
+#     plot.caption = element_markdown()
+#   )
 ```
 
 
