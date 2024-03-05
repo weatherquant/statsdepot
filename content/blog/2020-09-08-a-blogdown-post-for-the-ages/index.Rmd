@@ -1,17 +1,19 @@
 ---
 title: "Writing a blogdown post for the ages"
-subtitle: "How to write a blogdown post that will still render in a hundred years from now."
-summary: "How to write a blogdown post that will still render in a hundred years from now."
-date: 2024-03-04
-authors:
- - admin
-slug: a-blogdown-post-for-the-ages
-categories: ["Blogging"]
-tags: ["Blogdown", "R", "Blogging", "Markdown", "R Markdown"]
-## For re-generating the md output from the original R code
-#output:
-#  bookdown::html_document2:
-#    keep_md: yes
+subtitle: How to write a blogdown post that will still render in a hundred years from
+  now.
+date: "2024-03-04"
+summary: How to write a blogdown post that will still render in a hundred years from
+  now.
+authors: admin
+slug: "a-blogdown-post-for-the-ages"
+categories: Blogging
+tags:
+- Blogdown
+- R
+- Blogging
+- Markdown
+- R Markdown
 ---
 
 ```{r echo = FALSE}
