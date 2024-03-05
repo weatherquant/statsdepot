@@ -2,7 +2,7 @@
 title: "Writing a blogdown post for the ages"
 subtitle: "How to write a blogdown post that will still render in a hundred years from now."
 summary: "How to write a blogdown post that will still render in a hundred years from now."
-date: 2020-09-08
+date: 2024-03-04
 authors:
  - admin
 slug: a-blogdown-post-for-the-ages
@@ -28,9 +28,9 @@ The R package [blogdown](https://bookdown.org/yihui/blogdown/) has become a wide
 
 This problem has been recognized for a while, and the proposed solution is usually to knit only on demand. See e.g. [here](https://yutani.rbind.io/post/2017-10-25-blogdown-custom/). The experimental [hugodown package](https://github.com/r-lib/hugodown) likewise aims to limit any unnecessary re-knitting. Here, I'm taking a different approach. My perspective is that I want to be able to re-knit any time without worrying that I'll destroy anything of value, and I also want to be able to add code and output to posts containing prior code that doesn't run anymore today.
 
-My approach is to copy the knitted markdown code and output back into the `.Rmd` file. This requires some amount of manual work, but it's not that bad, and I value the benefits I get from this approach. Maybe at some point somebody will write a package that can automate this process.
+One approach is to copy the knitted markdown code and output back into the `.Rmd` file. This requires some amount of manual work, but it's not that bad, and I value the benefits I get from this approach. Maybe at some point somebody will write a package that can automate this process.
 
-I do not necessarily recommend the approach I'm taking here. This post is mostly for my own purposes, so I can retrace my steps in the future. If you want to see the source code resulting from this process, you can check out the [source for this post](https://github.com/clauswilke/clauswilke.github.io/blob/master/content/blog/2020-09-08-a-blogdown-post-for-the-ages/index.Rmd) on github.
+I do not necessarily recommend the approach taken here. This post is mostly for personal audit purposes, to be able to retrace the steps in the future. The source code from this process can be obtained from [this location](https://github.com/clauswilke/clauswilke.github.io/blob/master/content/blog/2020-09-08-a-blogdown-post-for-the-ages/index.Rmd) on github.
 
 To provide an example scenario, I include here one chunk of R code that generates a figure. This code has various features that will likely generate issues in the future or in a blog with many posts:
 
