@@ -8,6 +8,12 @@
 
 <ul class="list-unstyled">
  
+    <li>
+   94.
+    <a href="/blog/2024/3/8/Regression-Example">How to run a basic regression</a>
+    (03/08/2024)
+   </li>
+ 
    <li>
    93.
     <a href="/blog/2018/1/23/fundamentals-of-data-visualization">Fundamentals of Data Visualization</a>
