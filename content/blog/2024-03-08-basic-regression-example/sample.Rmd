@@ -2,7 +2,17 @@
 title: "Regression-Example"
 author: "Jason West"
 date: "2024-03-09"
-output: html_document
+summary: How to run a basic regression
+authors: admin
+slug: "Regression-Example"
+categories: Blogging
+tags:
+- Regression
+- R
+- Blogging
+- Markdown
+- R Markdown
+subtitle: How to run a basic regression.
 ---
 
 ```{r setup, include=FALSE}
