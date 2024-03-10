@@ -3,7 +3,7 @@ title: "Regression-Example"
 subtitle: "How to run a basic regression."
 summary: "How to run a basic regression."
 date: 2024-03-09
-output: html_document
+#output: html_document
 authors: 
  - admin
 slug: Regression-Example
