@@ -47,7 +47,7 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-```{r}
+```{r fit_plot}
 fit=lm(dist~speed,data=cars)
 b=coef(fit)
 plot(cars)
