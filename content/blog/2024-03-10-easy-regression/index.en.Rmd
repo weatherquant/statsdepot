@@ -1,15 +1,27 @@
 ---
-title: "Regression-Example"
-subtitle: "How to run a basic regression."
-summary: "How to run a basic regression."
-date: 2024-03-09
-#output: html_document
-authors: 
- - admin
-slug: Regression-Example
-categories: ["Regression"]
-tags: ["Regression", "R"]
+title: easy regression
+author: Jason West
+date: '2024-03-10'
+slug: easy-regression
+categories:
+  - Data science
+  - R
+  - Regression
+tags:
+  - Regression
+  - R
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2024-03-10T13:40:47+10:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -43,3 +55,5 @@ abline(fit)
 ```
 
 The slope of the regression is `r b[1]`.
+
+
