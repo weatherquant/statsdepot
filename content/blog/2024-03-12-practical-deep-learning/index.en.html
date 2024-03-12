@@ -1,0 +1,257 @@
+---
+title: Practical deep learning
+author: Jason West
+date: '2024-03-12'
+slug: practical-deep-learning
+categories:
+  - Data science
+  - R
+  - Regression
+tags:
+  - Deep Learning
+  - Data analysis
+  - R
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2024-03-12T13:03:42+10:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+
+
+<div id="deep-learning-tutorial" class="section level1">
+<h1>Deep Learning Tutorial</h1>
+<p>In this post I fit a simple neural network using the neuralnet package and fit a linear model as a comparison.</p>
+<p>To explore the strength of applying deep learning processes for prediction, we use the Ames housing data set from the package “modeldata”.</p>
+<p>The original data set describes the sale of individual residential property in Ames, Iowa from 2006 to 2010. The data set contains 2930 observations and a large number of explanatory variables (23 nominal, 23 ordinal, 14 discrete, and 20 continuous) involved in assessing home values.</p>
+<p>We then restrict the data to include only relevant numeric columns to make the regressions and scaling methods needed for machine learning more manageable.</p>
+<pre class="r"><code>knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+set.seed(500)
+library(modeldata) # To access the Ames housing data set
+data&lt;- ames
+
+data &lt;- data[c(&#39;Lot_Area&#39;,&#39;Year_Built&#39;,&#39;Year_Remod_Add&#39;,
+               &#39;Mas_Vnr_Area&#39;,&#39;Total_Bsmt_SF&#39;,&#39;Gr_Liv_Area&#39;,
+               &#39;Bedroom_AbvGr&#39;,&#39;Fireplaces&#39;,&#39;Garage_Cars&#39;,
+               &#39;Wood_Deck_SF&#39;,&#39;Screen_Porch&#39;,&#39;Pool_Area&#39;,&#39;Misc_Val&#39;,
+               &#39;Year_Sold&#39;,&#39;Latitude&#39;,&#39;Longitude&#39;,&#39;Sale_Price&#39;)]
+str(data)</code></pre>
+<pre><code>## tibble [2,930 × 17] (S3: tbl_df/tbl/data.frame)
+##  $ Lot_Area      : int [1:2930] 31770 11622 14267 11160 13830 9978 4920 5005 5389 7500 ...
+##  $ Year_Built    : int [1:2930] 1960 1961 1958 1968 1997 1998 2001 1992 1995 1999 ...
+##  $ Year_Remod_Add: int [1:2930] 1960 1961 1958 1968 1998 1998 2001 1992 1996 1999 ...
+##  $ Mas_Vnr_Area  : num [1:2930] 112 0 108 0 0 20 0 0 0 0 ...
+##  $ Total_Bsmt_SF : num [1:2930] 1080 882 1329 2110 928 ...
+##  $ Gr_Liv_Area   : int [1:2930] 1656 896 1329 2110 1629 1604 1338 1280 1616 1804 ...
+##  $ Bedroom_AbvGr : int [1:2930] 3 2 3 3 3 3 2 2 2 3 ...
+##  $ Fireplaces    : int [1:2930] 2 0 0 2 1 1 0 0 1 1 ...
+##  $ Garage_Cars   : num [1:2930] 2 1 1 2 2 2 2 2 2 2 ...
+##  $ Wood_Deck_SF  : int [1:2930] 210 140 393 0 212 360 0 0 237 140 ...
+##  $ Screen_Porch  : int [1:2930] 0 120 0 0 0 0 0 144 0 0 ...
+##  $ Pool_Area     : int [1:2930] 0 0 0 0 0 0 0 0 0 0 ...
+##  $ Misc_Val      : int [1:2930] 0 0 12500 0 0 0 0 0 0 0 ...
+##  $ Year_Sold     : int [1:2930] 2010 2010 2010 2010 2010 2010 2010 2010 2010 2010 ...
+##  $ Latitude      : num [1:2930] 42.1 42.1 42.1 42.1 42.1 ...
+##  $ Longitude     : num [1:2930] -93.6 -93.6 -93.6 -93.6 -93.6 ...
+##  $ Sale_Price    : int [1:2930] 215000 105000 172000 244000 189900 195500 213500 191500 236500 189000 ...</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>data &lt;- data %&gt;% mutate(Sale_Price = log10(Sale_Price))</code></pre>
+<p>We take log (base 10) of Sales_Price to convert the dependent variable to a set of linear values.<br />
+We also check for missing data to ensure a complete set, important for establishing deep learning analyses.</p>
+<pre class="r"><code>apply(data,2,function(x) sum(is.na(x))) # 2 indicates run function for columns</code></pre>
+<pre><code>##       Lot_Area     Year_Built Year_Remod_Add   Mas_Vnr_Area  Total_Bsmt_SF 
+##              0              0              0              0              0 
+##    Gr_Liv_Area  Bedroom_AbvGr     Fireplaces    Garage_Cars   Wood_Deck_SF 
+##              0              0              0              0              0 
+##   Screen_Porch      Pool_Area       Misc_Val      Year_Sold       Latitude 
+##              0              0              0              0              0 
+##      Longitude     Sale_Price 
+##              0              0</code></pre>
+<p>Data looks ok so let’s proceed.</p>
+<p>Next we randomly split the data into a train and a test set. We reserve 25 per cent of the data for testing.</p>
+<pre class="r"><code>index &lt;- sample(1:nrow(data),round(0.75*nrow(data)))
+train &lt;- data[index,]
+test &lt;- data[-index,]</code></pre>
+<p>Next we fit a simple linear regression model against all covariates to estimate the explanatory power of the data set for determining the log of the sales price of homes in Ames.</p>
+<p>The aim is to produce the linear model, use it predict sales prices in the test data set, and then measure the errors between the predicted value and the observed value, summarised using the mean squared error calculation (MSE.lm).</p>
+<pre class="r"><code>lm.fit &lt;- glm(Sale_Price~., data=train)
+summary(lm.fit)</code></pre>
+<pre><code>## 
+## Call:
+## glm(formula = Sale_Price ~ ., data = train)
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    -2.630e+01  8.918e+00  -2.950  0.00322 ** 
+## Lot_Area        7.745e-07  2.334e-07   3.318  0.00092 ***
+## Year_Built      1.076e-03  8.598e-05  12.518  &lt; 2e-16 ***
+## Year_Remod_Add  1.595e-03  1.097e-04  14.533  &lt; 2e-16 ***
+## Mas_Vnr_Area    3.058e-05  1.092e-05   2.799  0.00517 ** 
+## Total_Bsmt_SF   7.442e-05  4.855e-06  15.328  &lt; 2e-16 ***
+## Gr_Liv_Area     1.157e-04  5.557e-06  20.813  &lt; 2e-16 ***
+## Bedroom_AbvGr  -3.142e-03  2.580e-03  -1.218  0.22344    
+## Fireplaces      3.214e-02  3.147e-03  10.211  &lt; 2e-16 ***
+## Garage_Cars     3.983e-02  2.988e-03  13.330  &lt; 2e-16 ***
+## Wood_Deck_SF    7.767e-05  1.432e-05   5.425 6.44e-08 ***
+## Screen_Porch    1.830e-04  3.188e-05   5.740 1.08e-08 ***
+## Pool_Area      -1.371e-04  4.263e-05  -3.215  0.00132 ** 
+## Misc_Val       -2.475e-05  3.383e-06  -7.316 3.58e-13 ***
+## Year_Sold      -2.373e-03  1.310e-03  -1.812  0.07014 .  
+## Latitude        4.219e-01  9.927e-02   4.250 2.23e-05 ***
+## Longitude      -1.379e-01  7.478e-02  -1.845  0.06524 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for gaussian family taken to be 0.006401148)
+## 
+##     Null deviance: 70.741  on 2197  degrees of freedom
+## Residual deviance: 13.961  on 2181  degrees of freedom
+## AIC: -4846.1
+## 
+## Number of Fisher Scoring iterations: 2</code></pre>
+<pre class="r"><code>pr.lm &lt;- predict(lm.fit,test)
+MSE.lm &lt;- sum((pr.lm - test$Sale_Price)^2)/nrow(test)</code></pre>
+</div>
+<div id="neural-network" class="section level1">
+<h1>NEURAL NETWORK</h1>
+<p>Now we set up the data for analysing through the neural net.</p>
+<div id="step-1.-normalise-data." class="section level3">
+<h3>Step 1. Normalise Data.</h3>
+<pre class="r"><code>maxs &lt;- apply(data, 2, max) 
+mins &lt;- apply(data, 2, min)
+scaled &lt;- as.data.frame(scale(data, center = mins, scale = maxs - mins))
+train_ &lt;- scaled[index,]
+test_ &lt;- scaled[-index,]</code></pre>
+</div>
+<div id="step-2.-neural-network." class="section level3">
+<h3>Step 2. Neural Network.</h3>
+<p>We set up two hidden layers with a configuration of 17:5:3:1.</p>
+<p>This means we assume there the input layer = 17 inputs, 2 hidden layers = 5, and 3 neurons
+while the output layer = 1 output.</p>
+<pre class="r"><code>library(neuralnet)
+n &lt;- names(train_)
+f &lt;- as.formula(paste(&quot;Sale_Price ~&quot;, paste(n[!n %in% &quot;Sale_Price&quot;], collapse = &quot; + &quot;)))
+nn &lt;- neuralnet(f,data=train_,hidden=c(5,3),linear.output=T)</code></pre>
+<p>We plot the neural network. Black lines indicate the connections between each layer and the weights on each connection. The blue lines indicate the bias term added for each step, which can be interpreted as the intercept of the linear model.</p>
+<p>The neural net is a black box so we can’t observe the fitting process directly, nor can we understand precisely how the weights in the model are derived. However we can see that the training algorithm has achieved convergence.</p>
+<pre class="r"><code>plot(nn)</code></pre>
+<p><img src="figure-html/nn-plots-1.png" /><!-- --></p>
+</div>
+<div id="step-3.-predicting-sale_price-using-the-neural-network." class="section level3">
+<h3>Step 3. Predicting Sale_Price using the neural network.</h3>
+<p>The results need to be rescaled so the model is used appropriately on the original data set for prediction.</p>
+<pre class="r"><code>pr.nn &lt;- neuralnet::compute(nn,test_[,1:16]) # all columns excluding y variable
+pr.nn_ &lt;- pr.nn$net.result*(max(data$Sale_Price)-min(data$Sale_Price))+min(data$Sale_Price)
+test.r &lt;- (test_$Sale_Price)*(max(data$Sale_Price)-min(data$Sale_Price))+min(data$Sale_Price)
+MSE.nn &lt;- sum((test.r - pr.nn_)^2)/nrow(test_)</code></pre>
+<p>We then compare the two MSEs from the linear regression and the neural net. The neural net modestly outperforms the linear regression (lower error term).</p>
+<pre class="r"><code>print(paste(MSE.lm,MSE.nn))</code></pre>
+<pre><code>## [1] &quot;0.00490688732406871 0.00640761577824154&quot;</code></pre>
+<p>Plots of the results for the neural net relative to the linear regression are plotted. Predictions from the neural network appear slightly more concentrated around the line (perfect prediction) than those made by the linear model.</p>
+<pre class="r"><code>par(mfrow=c(1,2))
+
+plot(test$Sale_Price,pr.nn_,col=&#39;red&#39;,main=&#39;Real vs predicted NN&#39;,pch=18,cex=0.7)
+abline(0,1,lwd=2)
+legend(&#39;bottomright&#39;,legend=&#39;NN&#39;,pch=18,col=&#39;red&#39;, bty=&#39;n&#39;)
+
+plot(test$Sale_Price,pr.lm,col=&#39;blue&#39;,main=&#39;Real vs predicted lm&#39;,pch=18, cex=0.7)
+abline(0,1,lwd=2)
+legend(&#39;bottomright&#39;,legend=&#39;LM&#39;,pch=18,col=&#39;blue&#39;, bty=&#39;n&#39;, cex=.95)</code></pre>
+<p><img src="figure-html/nnet_plots-1.png" /><!-- --></p>
+<p>The combined plot indicates the modest gains from the neural network in more detail.</p>
+<pre class="r"><code>par(mfrow=c(1,1))
+
+plot(test$Sale_Price,pr.nn_,col=&#39;red&#39;,main=&#39;Real vs predicted NN&#39;,pch=18,cex=0.7)
+points(test$Sale_Price,pr.lm,col=&#39;blue&#39;,pch=18,cex=0.7)
+abline(0,1,lwd=2)
+legend(&#39;bottomright&#39;,legend=c(&#39;NN&#39;,&#39;LM&#39;),pch=18,col=c(&#39;red&#39;,&#39;blue&#39;))
+points(test$Sale_Price,pr.lm,col=&#39;blue&#39;,pch=18,cex=0.7)</code></pre>
+<p><img src="figure-html/combined_plot-1.png" /><!-- --></p>
+</div>
+<div id="cross-validation" class="section level2">
+<h2>Cross Validation</h2>
+<p>Cross validation can be a useful process for building predictive models. Cross validation methods should adopt some form of iterating the following process several times:</p>
+<ol style="list-style-type: decimal">
+<li>Do the train-test split</li>
+<li>Fit the model to the train set</li>
+<li>Test the model on the test set</li>
+<li>Calculate the prediction error</li>
+<li>Repeat the process K times</li>
+</ol>
+<pre class="r"><code>library(boot)
+set.seed(200)
+lm.fit &lt;- glm(Sale_Price~.,data=data) #medv
+cv.glm(data,lm.fit,K=10)$delta[1]</code></pre>
+<pre><code>## [1] 0.006399218</code></pre>
+<p>We can then implement the NNet on a split data set (90 per cent training and 10 per cent test) and randomly iterate it 10 times.</p>
+<pre class="r"><code>set.seed(450)
+cv.error &lt;- NULL
+k &lt;- 10</code></pre>
+<p>We then run the iteration through a loop. To check on progress we use the progress bar from plyr.</p>
+<pre class="r"><code>library(plyr) 
+pbar &lt;- create_progress_bar(&#39;text&#39;)
+pbar$init(k)
+
+for(i in 1:k){
+  index &lt;- sample(1:nrow(data),round(0.9*nrow(data)))
+  train.cv &lt;- scaled[index,]
+  test.cv &lt;- scaled[-index,]
+  
+  nn &lt;- neuralnet(f,data=train.cv,hidden=c(5,2),linear.output=T)
+  
+  pr.nn &lt;- neuralnet::compute(nn,test.cv[,1:17])
+  pr.nn &lt;- pr.nn$net.result*(max(data$Sale_Price)-min(data$Sale_Price))+min(data$Sale_Price)
+  
+  test.cv.r &lt;- (test.cv$Sale_Price)*(max(data$Sale_Price)-min(data$Sale_Price))+min(data$Sale_Price)
+  
+  cv.error[i] &lt;- sum((test.cv.r - pr.nn)^2)/nrow(test.cv)
+  
+  pbar$step()
+}
+
+mean(cv.error)
+cv.error</code></pre>
+<p>The results are produced using the below and we produce a boxplot of the results.</p>
+<pre class="r"><code>boxplot(cv.error,xlab=&#39;MSE CV&#39;,col=&#39;cyan&#39;,
+        border=&#39;blue&#39;,names=&#39;CV error (MSE)&#39;,
+        main=&#39;CV error (MSE) for NN&#39;,horizontal=TRUE)</code></pre>
+<p><img src="figure-html/cverror_plot-1.png" /><!-- --></p>
+<p>The average MSE for the neural network is lower than the one of the linear model. But there is some variation in the MSEs of the cross validation, which depend on both the splitting of the data and the random initialization of the weights in the net. By running the simulation different times with different seeds a more precise estimate for the average MSE would be obtained.</p>
+</div>
+<div id="model-interpretability" class="section level2">
+<h2>Model interpretability</h2>
+<p>Neural networks are very useful but remain, in many ways, a black box. The explanatory power of neural networks are less efficient than their predictive power. Simpler linear models demonstrate significant abilities to explain relationships in data, while neural networks do not. If prediction is critical for the task at hand, then neural networks may offer an advantage over traditional statistical methods.</p>
+<div id="double-check-using-a-random-forest" class="section level3">
+<h3>Double check using a random forest</h3>
+<p>We can of course check the quality of the results using a random forest to compare with the above methods.</p>
+<pre class="r"><code>library(randomForest)
+set.seed(12345)
+fit.rf &lt;- randomForest(formula = Sale_Price ~ ., data = train)
+
+set.seed(12345)
+pred.rf &lt;- predict(fit.rf, test)
+
+rmse.rf &lt;- sqrt(sum(((pred.rf) - test$Sale_Price)^2)/
+                  length(test$Sale_Price))
+c(RMSE = rmse.rf, pseudoR2 = mean(fit.rf$rsq))</code></pre>
+<pre><code>##       RMSE   pseudoR2 
+## 0.06127515 0.85028545</code></pre>
+<p>The values look ok but seem to result in a larger error than offered above. This could be an analysis task for another time…</p>
+<p>Thank you for reading. Comments welcome.</p>
+</div>
+</div>
+</div>
