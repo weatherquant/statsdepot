@@ -11,8 +11,8 @@ tags:
   - Deep Learning
   - Data analysis
   - R
-subtitle: ''
-summary: ''
+subtitle: 'Fitting a simple neural network and comparing with a linear regression'
+summary: 'Fitting a simple neural network and comparing with a linear regression'
 authors: []
 lastmod: '2024-03-12T13:03:42+10:00'
 featured: no
