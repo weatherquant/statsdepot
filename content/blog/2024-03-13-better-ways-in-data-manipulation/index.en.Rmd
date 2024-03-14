@@ -1,0 +1,85 @@
+---
+title: Better ways in data manipulation
+author: Jason West
+date: '2024-03-13'
+slug: better-ways-in-data-manipulation
+categories:
+  - Data science
+  - R
+tags:
+  - R
+  - Statistics
+subtitle: 'Data wrangling with dplyr in R.'
+summary: 'Data wrangling with dplyr in R.'
+authors: []
+lastmod: '2024-03-13T17:11:49+10:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+## Fast data manipulation with dplyr
+
+Hadley Wickham, author of the [ggplot2](https://ggplot2.tidyverse.org/) library for R advances the world of computational data analysis with the [dplyr](http://cran.r-project.org/web/packages/dplyr/index.html) package. This package provides a grammar for data manipulation which has become as important for large-scale data analysis and manipulation as ggplot2 has become for visualization.[^1]  
+
+[^1]: And if you aren’t familiar with [ggplot2,](https://ggplot2.tidyverse.org/) spend some time with it. If you’re used to traditional visualization approaches, you may think in terms of drawing points and lines onto a canvas. ggplot2 requires you to approach visualization in a completely different way, in terms of mapping features of the data onto aesthetic features of the graph. This way of thinking is very powerful.
+
+dplyr is the next iteration of the popular plyr package. It 100 times faster and a lot more intuitive. It provides a clean interface to work with data sets that are “tidy.” Let's use a simple analysis to show the way.  
+
+We analyse how much evolutionary divergence there is between human genes and the corresponding mouse orthologs. Specifically, we are interested in the range of sequence identities among genes, i.e., what are the most conserved genes, the most diverged genes, what is the mean divergence, and so on. The analysis has an additional twist in that there are different types of ortholog pairs. There are one-to-one orthologs, where the human gene has exactly one counter-part in the mouse genome, there are one-to-many orthologs, where the gene in one organism has multiple counter-parts in the other organism, and there are many-to-many orthologs, where there are multiple genes in both organisms that are orthologous to each other. So, we wish to conduct the analysis by orthology type.  
+
+I have obtained human-to-mouse orthologs with their respective sequence identities from [ensembl](http://www.ensembl.org/index.html). The resulting csv file is available [here.](https://github.com/weatherquant/data/blob/main/human_mouse_divergence.csv) We can download this file directly into R, using the RCurl package. Loading the dplyr package is needed for fast data manipulation:  
+
+```{r intro, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+```{r load_data}
+library(RCurl)  
+library(dplyr)  
+url <- "https://raw.githubusercontent.com/weatherquant/data/main/human_mouse_divergence.csv"    
+data <- read.csv(textConnection(getURL(url)))
+```
+
+First we will take a look at the data. There are five columns, the gene id for the human gene, the gene id for the corresponding mouse ortholog, the homology type (one-to-one, one-to-many, many-to-many), the percent identity with respect to both the human (`perc.ident.human`) and the mouse (`perc.ident.mouse`) gene, and a confidence score that tells us how confident we are that the two genes are actually orthologous.  
+
+```{r look_at_data}
+head(data)
+```
+
+Now for the dplyr magic. Let's assume we want to analyze the data by homology type, and we want to find the minimum, mean, median, and maximum sequence identity for each homology type, as well as the standard deviation of the identity distribution. We can perform this simply using the following code:  
+
+```{r homology_type}
+data %>% group_by(homology.type) %>%  
+  summarize(  
+    min=min(perc.ident.human),  
+    mean=mean(perc.ident.human),  
+    std.dev=sd(perc.ident.human),
+    max=max(perc.ident.human))
+```
+
+The function `group_by()` produces the analysis separately for each homology type, while the function `summarize()` calculates the summary statistics (min, mean, etc.) for each group. The operator `%>%` is a pipe operator (in the same way as a pipe in the UNIX command line). It takes the output from the previous operation and feeds it into the subsequent operation.  
+
+This sequence using dplyr syntax focuses entirely on the logical flow of the data analysis. This frees us from needing to maintain a bookkeeping approach to data management, as well as avoiding the need to loop over cases, or record details related to data storage.  
+
+We can do plenty of related segmentation analyses quickly. Say we’re only interested in one-to-one orthologs, and we'd like to find the top 10 least diverged mouse genes and list them in descending order. The following lines achieve this very quickly:  
+
+```{r ortholog_segments}
+data %>% filter(homology.type=='ortholog_one2one') %>%  
+    select(mouse.gene.ID, human.gene.ID, perc.ident.human) %>%
+    arrange(desc(perc.ident.human)) %>%
+    do(head(.,10))
+```
+
+The function `filter()` selects all rows of the given homology type, the function `select()` picks the specific columns we are interested in, the function `top_n()` selects the top *n* values in the last data column (i.e., column `perc.ident.human` in this example), and the function `arrange()` sorts the data.  
+
+If these examples are of interest and you wish to learn more, the dplyr vignette offers further guidance, and can be accessed here: [https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html](https://cran.r-project.org/web/packages/dplyr/vignettes/programming.html)  
+
+There is also an excellent introduction by Kevin Markham, with accompanying 40 minute video, available here: [http://rpubs.com/justmarkham/dplyr-tutorial](http://rpubs.com/justmarkham/dplyr-tutorial)  
+
+Finally, dplyr has a [database backend,](https://dbplyr.tidyverse.org/) so you can now easily use all the statistical sophistication that R provides on arbitrarily large, remotely stored data sets.
+
+Thanks for reading. Enjoy using this package...it's the industry standard these days.
