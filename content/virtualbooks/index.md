@@ -1,5 +1,5 @@
 ---
-title: Virtual Books
+title: Research
 summary: ""
 date: ""
 
@@ -19,81 +19,59 @@ The papers listed below are a selection of research published in statistics, fin
 
 #### Climate Risk: Adaptive analysis
 
-1. [Preserving Value through Adaptation to Climate Change](https://onlinelibrary.wiley.com/doi/abs/10.1111/jacf.12032)
+1. [Preserving value through adaptation to climate change](https://onlinelibrary.wiley.com/doi/abs/10.1111/jacf.12032)
 2. [Pricing weather derivatives](https://link.springer.com/article/10.1007/s10690-005-4252-9)
 3. [Climate change adaptation in industry and business](https://apo.org.au/node/33898)
 4. [Investing in adaptive capacity](https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118845028.ch49)
-4. [Natural Disasters, Insurance Stocks and the Numeraire Portfolio](https://www.airitilibrary.com/Article/Detail/a0000597-201410-201411200021-201411200021-23-58)
-5. [No one reads your paper either](/blog/2013/11/3/no-one-reads-your-paper-either)
+4. [Natural disasters, insurance stocks and the numeraire portfolio](https://www.airitilibrary.com/Article/Detail/a0000597-201410-201411200021-201411200021-23-58)
+5. [Catastrophes and insurance stocks](https://doi.org/10.1017/S1748499511000340)
+6. [Optimising adaptation decisions using contingent claim valuation](https://onlinelibrary.wiley.com/doi/full/10.1111/1467-8489.12278)
 
-#### Chapter 2: Constructing meaningful sentences and paragraphs
+#### Financial Research: Quantitative analysis and valuation
 
-1. [Avoiding the official style](/blog/2015/8/26/avoiding-the-official-style)
-1. [Writing paragraphs that make sense—the topic and the stress position](/blog/2013/9/26/writing-paragraphs-that-make-sensethe-topic-and-the-stress-position)
-1. [Don't use the passive voice?](/blog/2015/12/19/dont-use-the-passive-voice)
-2. [Articles!](/blog/2013/10/1/articles)
-3. [To write well, learn how to read](/blog/2013/10/8/to-write-well-learn-how-to-read)
+1. [Capital valuation and sustainability](https://link.springer.com/article/10.1007/s11156-014-0448-2)
+2. [Futures price estimates using the seasonal Nelson-Siegel model](https://core.ac.uk/download/pdf/143890195.pdf)
+3. [Intraday empirical analysis of electricity price behaviour](https://repository.lsu.edu/cosa/vol5/iss4/8/)
+4. [A comparative analysis of electricity generation cost: OECD vs non-OECD](https://www.sciencedirect.com/science/article/abs/pii/S1040619011003186)
+5. [Retirement income sufficiency through personalised glidepaths](https://www.tandfonline.com/doi/abs/10.1080/0015198X.2021.1877981)
+6. [Marginal abatement cost curves: Retrofitting carbon capture and storage](https://www.tandfonline.com/doi/abs/10.7158/M11-807.2012.9.2)
+7. [Multi-criteria evolutionary algorithms for crop management](https://www.sciencedirect.com/science/article/abs/pii/S0308521X17311101)
+8. [Conditional allocations to real estate: An antidote to sequencing risk in defined contribution retirement plans](https://www.researchgate.net/profile/Jason-West-12/publication/282429586_Conditional_Allocations_to_Real_Estate_An_Antidote_to_Sequencing_Risk_in_Defined_Contribution_Retirement_Plans/links/5d02cf3392851c874c64f49a/Conditional-Allocations-to-Real-Estate-An-Antidote-to-Sequencing-Risk-in-Defined-Contribution-Retirement-Plans.pdf)
+9. [Retirement adequacy through higher contributions](https://www.pm-research.com/content/iijretire/1/4/57)
+10. [Quality differentials and the seaborne thermal coal market](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2148719)
+11. [Agent modelling of technology adoption in agriculture](https://www.tandfonline.com/doi/abs/10.1080/10438599.2019.1616661)
+12. [Collaborative patterns and power imbalance in strategic alliance networks](https://ascelibrary.org/doi/abs/10.1061/(ASCE)CO.1943-7862.0000846)
+13. [Japanese investment through the demise of concessional financing](https://www.sciencedirect.com/science/article/abs/pii/S0301421512008579)
+14. [Optimising stockpiles using a dynamic cost flow model](https://www.asor.org.au/publication/page.php?page=21)
+15. [Convertible bonds and stock liquidity](https://link.springer.com/article/10.1007/s10690-011-9139-3)
+16. [Time Variation in the allocation to real estate assets](https://www.tandfonline.com/doi/abs/10.1080/10835547.2018.12090006)
+17. [Convenience yield and the theory of storage: an option-based approach](https://onlinelibrary.wiley.com/doi/full/10.1111/1467-8489.12092)
+18. [The European energy complex: an integrated market?](https://www.sciencedirect.com/science/article/abs/pii/S1040619013001115)
+19. [Efficient portfolios Using time-varying correlations](https://link.springer.com/article/10.1007/s11053-013-9220-x)
+20. [Inferring risk aversion for decentralized investment portfolios](https://ieeexplore.ieee.org/abstract/document/7184900)
+21. [An evolutionary algorithm for defined contribution schemes](https://link.springer.com/chapter/10.1007/978-3-319-14803-8_22)
+22. [An algorithm for cleaning high frequency data](http://www.virtusinterpress.org/IMG/pdf/cocv12i3c1p1.pdf)
 
-#### Chapter 3: Writing scientific papers, grants, etc.
+#### Corporate Research: Reports
 
-1. [Writing a scientific paper in four easy steps](/blog/2013/8/29/writing-a-scientific-paper-in-four-easy-steps)
-1. [How to prepare an article for resubmission](/blog/2014/11/16/how-to-prepare-an-article-for-resubmission)
-1. [How to prepare an article for resubmission, Part II](/blog/2014/12/18/how-to-prepare-an-article-for-resubmission-part-ii)
-1. [How to reject a rejection](/blog/2017/1/2/how-to-reject-a-rejection)
-2. [The critical need in a grant application](/blog/2013/10/17/the-critical-need-in-a-grant-application)
-1. [Use fine-grained sectioning in your grant proposals](/blog/2013/10/28/use-fine-grained-sectioning-in-your-grant-proposals)
+1. [Strategy war games: how business can outperform the competition](https://www.emerald.com/insight/content/doi/10.1108/JBS-11-2017-0154/full/html)
+2. [Allocating real estate assets to retirement portfolios](https://dcrec.org/Files/DCREC%20Research/DCREC%20A%20Path%20to%20Better%20Retirement%20Outcomes%20November%202014.pdf)
+3. [Wealth portfolios and elite professional athletes](https://link.springer.com/article/10.1057/fsm.2012.21)
+4. [Islamic finance and resources: Project finance](https://platform.almanhal.com/Files/Articles/40078)
+5. [Structured Islamic finance options for the resources sector](https://core.ac.uk/download/pdf/143890197.pdf)
+6. [Prediction framework for cyber-attacks to precision agriculture](https://www.tandfonline.com/doi/abs/10.1080/10496505.2017.1417859)
+7. [Advances in data security for more effective decision-making in agriculture](https://www.taylorfrancis.com/chapters/edit/10.1201/9781003047872-4/advances-data-security-effective-decision-making-agriculture-jason-west)
+8. [Competition barriers to Paraguayan beef exports: an economic review](http://repo.aki.gov.hu/3322/)
+9. [Improving retirement adequacy through asset class prioritization](https://link.springer.com/article/10.1057/fsm.2014.23)
+10. [Withdrawal capacity and health and aged-care expenses during retirement](https://www.pm-research.com/content/iijretire/3/3/77.abstract)
 
+#### Instruction: Teaching statistics and quantitative methods
 
-#### Chapter 4: Creating professional documents, graphs, and figures
+1. [Financial literacy education and behaviour for product design](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1470-6431.2012.01118.x)
+2. [Teaching data science: curriculum validation](https://www.tandfonline.com/doi/abs/10.1080/08993408.2018.1486120)
+3. [Validating curriculum development using text mining](https://www.tandfonline.com/doi/abs/10.1080/09585176.2016.1261719)
+4. [Examining ethics education in quantitative finance](https://www.neilsonjournals.com/JBEE/abstractjbee9west.html)
+5. [Interdisciplinary team teaching](https://research.bond.edu.au/en/publications/interdisciplinary-team-teaching-leveraging-pedagogical-difference)
+6. [Quantitative methods in finance: ethics](https://link.springer.com/article/10.1007/s10551-014-2193-9)
+7. [Approaches to learning in technology fields for graduate employability](https://ltr.edu.au/resources/FS15-0252_West_Report_2020.pdf)
 
-2. [Formatting figure captions and tables](/blog/2015/11/24/formatting-figure-captions-and-tables)
-2. [The axis labels are too damn small](/blog/2013/9/10/the-axis-labels-are-too-damn-small)
-2. [To grid or not to grid](/blog/2014/10/7/to-grid-or-not-to-grid)
-1. [How to not mess up your bibliographies with Bibtex](/blog/2015/10/2/Bibtex)
-
-#### Chapter 5: Miscellaneous topics
-
-1. [Move over Strunk and White: My all-time favorite books on writing](/blog/2017/11/12/move-over-strunk-and-white)
-
-## Professional Development as a Scientist
-
-#### Chapter 1: The academic career
-
-1. [From undergraduate to faculty member: Critical decision points in the academic career](/blog/2013/9/6/from-undergraduate-to-faculty-member-critical-decision-points-in-the-academic-career)
-2. [How good is good enough?](/blog/2013/9/10/how-good-is-good-enough)
-1. [How to choose the right lab for graduate school](/blog/2013/9/29/how-to-choose-the-right-lab-for-graduate-school)
-1. [What is the value of a mentor?](/blog/2013/10/19/what-is-the-value-of-a-mentor)
-1. [Surviving the pre-tenure years at an R1 university](/blog/2014/7/12/surviving-the-pre-tenure-years-at-an-r1-university)
-
-#### Chapter 2: Being successful in graduate school
-
-1. [Understanding the graduate-school interview or recruitment event](/blog/2014/1/14/understanding-the-graduate-school-interview-or-recruitment-event)
-1. [6 reasons to do your graduate work in the lab of a junior PI, and 6 reasons not to](/blog/2014/1/25/6-reasons-to-do-your-graduate-work-in-the-lab-of-a-junior-pi-and-6-reasons-not-to)
-1. [How to pick a thesis committee](/blog/2014/1/26/how-to-pick-a-thesis-committee)
-1. [How to schedule a committee meeting](/blog/2014/10/14/how-to-schedule-a-committee-meeting)
-1. [Excess ambition—the eternal flaw of all PhD thesis proposals](/blog/2013/12/7/excess-ambitionthe-eternal-flaw-of-all-phd-thesis-proposals)
-1. [Do you have to publish papers to obtain a PhD?](/blog/2017/1/6/do-you-have-to-publish-papers-for-a-phd)
-
-#### Chapter 3: Giving presentations
-
-1. [Giving effective presentations](/blog/2013/10/20/giving-effective-presentations)
-
-
-#### Chapter 4: Applying for jobs
-
-3. [Should you list on your cv a paper that is in review or in preparation?](/blog/2013/9/10/should-you-list-a-paper-in-review-or-in-preparation-on-your-cv)
-
-#### Chapter 5: Applying for funding
-
-1. [Which grants get funded at single-digit funding rates?](/blog/2013/10/17/which-grants-get-funded-at-single-digit-funding-rates)
-2. [The critical need in a grant application](/blog/2013/10/17/the-critical-need-in-a-grant-application)
-
-#### Chapter 6: Miscellaneous topics
-
-1. [How to develop a research question](/blog/2014/6/15/how-to-develop-a-research-question)
-2. [How to develop a research question, Part II](/blog/2014/6/18/how-to-develop-a-research-question-part-ii)
-1. [Safety projects](/blog/2015/7/1/safety-projects)
-3. [Share your preliminary work with other people, even if you think it's crap](/blog/2014/7/8/share-your-preliminary-work-with-other-people-even-if-you-think-its-crap)
-1. [What does it take to be a computational biologist?](/blog/2014/1/10/what-does-it-take-to-be-a-computational-biologist)
-5. [Should you as a scientist be active on LinkedIn?](/blog/2013/8/20/should-you-as-a-scientist-be-active-on-linkedin)
-8. [How to approach professors by email](/blog/2013/8/23/how-to-approach-professors-by-email)
