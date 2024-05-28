@@ -15,9 +15,13 @@ header:
 ---
 The papers listed below are a selection of research published in statistics, finance, risk management, and industrial optimisation.
 
-## Published papers
+### Published papers
 
-#### Climate Risk: Adaptive analysis
+##### Statistics: Various analyses
+1. [Temporal assessment of heatwaves using Cox proportional hazards](https://www.researchgate.net/publication/370048990_Temporal_assessment_of_heatwaves_using_Cox_proportional_hazards)
+2. [Classification in horse race prediction through principal component decomposition](https://www.researchgate.net/publication/370049041_Classification_in_horse_race_prediction_through_principal_component_decomposition)
+
+##### Climate Risk: Adaptive analysis
 
 1. [Preserving value through adaptation to climate change](https://onlinelibrary.wiley.com/doi/abs/10.1111/jacf.12032)
 2. [Pricing weather derivatives](https://link.springer.com/article/10.1007/s10690-005-4252-9)
@@ -27,7 +31,7 @@ The papers listed below are a selection of research published in statistics, fin
 5. [Catastrophes and insurance stocks](https://doi.org/10.1017/S1748499511000340)
 6. [Optimising adaptation decisions using contingent claim valuation](https://onlinelibrary.wiley.com/doi/full/10.1111/1467-8489.12278)
 
-#### Financial Research: Quantitative analysis and valuation
+##### Financial Research: Quantitative analysis and valuation
 
 1. [Capital valuation and sustainability](https://link.springer.com/article/10.1007/s11156-014-0448-2)
 2. [Futures price estimates using the seasonal Nelson-Siegel model](https://core.ac.uk/download/pdf/143890195.pdf)
@@ -52,7 +56,7 @@ The papers listed below are a selection of research published in statistics, fin
 21. [An evolutionary algorithm for defined contribution schemes](https://link.springer.com/chapter/10.1007/978-3-319-14803-8_22)
 22. [An algorithm for cleaning high frequency data](http://www.virtusinterpress.org/IMG/pdf/cocv12i3c1p1.pdf)
 
-#### Corporate Research: Reports
+##### Corporate Research: Reports
 
 1. [Strategy war games: how business can outperform the competition](https://www.emerald.com/insight/content/doi/10.1108/JBS-11-2017-0154/full/html)
 2. [Allocating real estate assets to retirement portfolios](https://dcrec.org/Files/DCREC%20Research/DCREC%20A%20Path%20to%20Better%20Retirement%20Outcomes%20November%202014.pdf)
@@ -66,7 +70,7 @@ The papers listed below are a selection of research published in statistics, fin
 10. [Withdrawal capacity and health and aged-care expenses during retirement](https://www.pm-research.com/content/iijretire/3/3/77.abstract)
 11. [Financial advisor participation rates and low net worth investors](https://link.springer.com/article/10.1057/fsm.2012.4)
 
-#### Instruction: Teaching statistics and quantitative methods
+##### Instruction: Teaching statistics and quantitative methods
 
 1. [Financial literacy education and behaviour for product design](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1470-6431.2012.01118.x)
 2. [Teaching data science: curriculum validation](https://www.tandfonline.com/doi/abs/10.1080/08993408.2018.1486120)
@@ -75,4 +79,3 @@ The papers listed below are a selection of research published in statistics, fin
 5. [Interdisciplinary team teaching](https://research.bond.edu.au/en/publications/interdisciplinary-team-teaching-leveraging-pedagogical-difference)
 6. [Quantitative methods in finance: ethics](https://link.springer.com/article/10.1007/s10551-014-2193-9)
 7. [Approaches to learning in technology fields for graduate employability](https://ltr.edu.au/resources/FS15-0252_West_Report_2020.pdf)
-
