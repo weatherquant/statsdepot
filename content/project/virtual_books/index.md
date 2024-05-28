@@ -6,9 +6,9 @@ image:
   focal_point: Smart
 links:
 slides: ""
-summary: Blog posts collected into book-like form.
+summary: Selected research papers.
 tags: []
-title: Virtual Books
+title: Research
 url_code: ""
 url_project: ""
 url_pdf:
