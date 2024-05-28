@@ -29,13 +29,13 @@ user_groups:
 ---
 
 
-Dr. Jason West has over 25 years of academic research and industry experience. He has published 2 books and over 50 journal articles on the use of statistics and mathematics for solving industrial problems. Dr. West is the Chief Statistician with the Australian Bureau of Meteorology. He has held senior executive roles with BHP, Commonwealth Bank, Standard Chartered Bank, and KPMG, and Professorial positions with The University of Queensland, the University of New England, and Bond University. Dr. West is based in Brisbane, Australia.
+Dr. Jason West is Chief Statistician at the Australian Bureau of Meteorology. Jason has 30 years of academic research and industry experience. He has published 2 books and 60 journal articles on the use of statistics and mathematics for solving industrial problems. Jason has held senior executive roles with BHP, Commonwealth Bank, Standard Chartered Bank, and KPMG, and Professorial positions with The University of Queensland, the University of New England, and Bond University. Jason is a Chartered Statistician and Fellow of the Royal Statistical Society. Jason is based in Brisbane, Australia.
 
-**Quals**
-- PhD (UTS)
-- M.Biostat (Sydney)
-- M.Eng. (UNSW)
-- BSc (UNSW) 
+##### Quals
+- *PhD (UTS)*
+- *M.Biostat (Sydney)*
+- *M.Eng. (UNSW)*
+- *BSc (UNSW)*
 
 Opinions expressed on this site are personal and do not necessarily represent the official position of the Bureau of Meteorology or associated organisations.
 
