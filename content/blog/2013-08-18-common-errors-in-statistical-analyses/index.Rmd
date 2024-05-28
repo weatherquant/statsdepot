@@ -4,7 +4,7 @@ subtitle: "Does your analysis mean what you think it means?"
 summary: "Does your analysis mean what you think it means?"
 slug: common-errors-in-statistical-analyses
 authors:
- - admin
+ - Jason West
 date: 2013-08-18
 categories: ["Science"]
 tags: ["Correlation", "Effect size", "Statistics"]
