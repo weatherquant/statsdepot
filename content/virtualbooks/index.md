@@ -13,17 +13,17 @@ header:
   caption: ""
   image: ""
 ---
-Many of my blog posts can be considered sections in books that I might have written [but probably never would have.](/blog/2013/8/17/a-blog-seriously) So, here I'm trying to [assemble these books as they get written.](/blog/2013/10/13/virtual-books)
+The papers listed below are a selection of research published in statistics, finance, risk management, and industrial optimisation.
 
-## Scientific Writing
+## Published papers
 
-#### Chapter 1: Writing productively
+#### Climate Risk: Adaptive analysis
 
-1. [Warm up before you write](/blog/2013/9/16/warm-up-before-you-write)
-2. [Silence your inner critic](/blog/2013/9/22/silence-your-inner-critic)
-3. [It’s easier to write when you know what you want to say](/blog/2013/9/18/its-easier-to-write-when-you-know-what-you-want-to-say)
-4. [When should you stop doing science and start writing a paper?](/blog/2013/8/26/when-should-you-stop-doing-science-and-start-writing-a-paper)
-4. [When will that paper be ready?](/blog/2015/12/28/when-will-that-paper-be-ready)
+1. [Preserving Value through Adaptation to Climate Change](https://onlinelibrary.wiley.com/doi/abs/10.1111/jacf.12032)
+2. [Pricing weather derivatives](https://link.springer.com/article/10.1007/s10690-005-4252-9)
+3. [Climate change adaptation in industry and business](https://apo.org.au/node/33898)
+4. [Investing in adaptive capacity](https://onlinelibrary.wiley.com/doi/abs/10.1002/9781118845028.ch49)
+4. [Natural Disasters, Insurance Stocks and the Numeraire Portfolio](https://www.airitilibrary.com/Article/Detail/a0000597-201410-201411200021-201411200021-23-58)
 5. [No one reads your paper either](/blog/2013/11/3/no-one-reads-your-paper-either)
 
 #### Chapter 2: Constructing meaningful sentences and paragraphs
