@@ -64,6 +64,7 @@ The papers listed below are a selection of research published in statistics, fin
 8. [Competition barriers to Paraguayan beef exports: an economic review](http://repo.aki.gov.hu/3322/)
 9. [Improving retirement adequacy through asset class prioritization](https://link.springer.com/article/10.1057/fsm.2014.23)
 10. [Withdrawal capacity and health and aged-care expenses during retirement](https://www.pm-research.com/content/iijretire/3/3/77.abstract)
+11. [Financial advisor participation rates and low net worth investors](https://link.springer.com/article/10.1057/fsm.2012.4)
 
 #### Instruction: Teaching statistics and quantitative methods
 
