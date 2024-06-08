@@ -7,7 +7,7 @@ summary: A comprehensive assessment of the management of climate change adaptati
   in the corporate sector.
 tags: []
 image:
-  caption: '[Book](static/img/longhedge.jpg)'
+  caption: ''
   focal_point: Smart
 url_code: ''
 url_project: ''
